@@ -17,12 +17,8 @@
     <title>@CurrentPage.Name | @CurrentPage._siteTitle</title>
 	
 	<!-- Fonts -->
-	<link href="//fonts.googleapis.com/css?family=Merriweather:400,700,300,900" rel="stylesheet" type="text/css">
-	<link href="//fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet" type="text/css">
 	
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/fanoe.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -36,30 +32,72 @@
   <body>
     <header>
       <div class="container">
-        <div class="row">
-       
-        </div>
-      </div>
-
+        <div class="inner">
+          <a href="/"><img src="/library/images/coe-logo.jpg" class="logo"/></a>
+          <h1 class="site-title">Analytics COE</h1>
+          <div class="search">
+            <input type="text" placeholder="Search"/>
+          </div><!-- search -->
+        </div><!-- inner -->
+      </div><!-- content -->
     </header>
 	
-    <div class="content">
-		<div class="content-inner">
-			@RenderBody()
-		</div><!-- content-inner -->
-	</div> <!-- content -->
+    <div class="content-top">
+		  <div class="inner">
+        <div class="navigation">
+          <ul>
+            <a href="/resources"><li class="resources"><span class="nav-text">Resources</span></li></a>
+            <a href="/blog"><li class="blog"><span class="nav-text">Blog</span></li></a>
+            <a href="/events"><li class="events"><span class="nav-text">Events</span></li></a>
+            <a href="/about"><li class="about"><span class="nav-text">About</span></li></a>
+            <a href="/contact-us"><li class="contact-us"><span class="nav-text">Contact Us</span></li></a>
+          </ul>
+        </div><!-- navigation -->
+        <div class="page-content">
+          @RenderBody()
+        </div><!-- page-content -->
+		  </div><!-- inner -->
+	  </div> <!-- content-top -->
+
+    <div class="clear"></div>
+
+    <div class="content-bottom">
+      <div class="inner">
+        <center><img src="/library/images/insights-and-trends.png" /></center>
+        <div class="blog-feed">
+          <div class="blog-post">
+            <span class="post-date">Date 1</span>
+            <h3 class="post-title">Blog Title 1</h3>
+            <p class="post-blurb">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <a class="read-more" href="#">Read More ></a>
+          </div><!-- blog-post -->
+          <div class="blog-post">
+            <span class="post-date">Date 2</span>
+            <h3 class="post-title">Blog Title 2</h3>
+            <p class="post-blurb">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <a class="read-more" href="#">Read More ></a>
+          </div><!-- blog-post -->
+          <div class="blog-post">
+            <span class="post-date">Date 3</span>
+            <h3 class="post-title">Blog Title 3</h3>
+            <p class="post-blurb">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <a class="read-more" href="#">Read More ></a>
+          </div><!-- blog-post -->
+          <div class="clear"></div>
+        </div><!-- blog-feed -->
+      </div><!-- inner -->
+    </div><!-- content-bottom -->
 
     <footer>
       <div class="container">
-        <div class="row">
-		
-        </div>
-      </div>
+        <div class="inner">
+        </div> <!-- inner --> 
+      </div> <!-- container -->
     </footer>
     
     <!-- Javascripts -->
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
-	<script src="/scripts/fanoe.js"></script>
+	  <script src="/scripts/fanoe.js"></script>
   </body>
 </html>
