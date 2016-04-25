@@ -3,4 +3,6 @@
     Layout = "Master.cshtml";
 }
 
-@CurrentPage.GetGridHtml("content", "fanoe")
+<h3 class="post-title post-page">@CurrentPage.postTitle</h3>
+<div class="post-date">@CurrentPage.CreateDate.ToLongDateString()</div>
+<p class="post-blurb-overview">@CurrentPage.postContent</p>

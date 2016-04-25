@@ -36,7 +36,7 @@ body {
 
 header {
 	height: 100px;
-	margin-bottom: 20px;
+	margin-bottom: 45px;
 }
 
 header .search {
@@ -118,11 +118,20 @@ h2 {
 	margin-bottom: 15px;
 }
 
+h2.page-title {
+	margin-top: 0px;
+}
+
 h3.post-title {
 	color: #ef4326;
 	margin-top: 0px;
 	font-family: 'Antenna Bold';
 	font-size: 20px;
+	text-decoration: none !important;
+}
+
+a {
+	text-decoration: none;
 }
 
 header .inner {
@@ -168,6 +177,7 @@ header .search input {
 
 .navigation ul {
 	padding-left: 0px;
+	margin-top: 0px;
 }
 
 .navigation li {
@@ -240,6 +250,10 @@ header .search input {
 	float: left;
 }
 
+.blog-post-overview {
+	margin-bottom: 40px;
+}
+
 .post-date {
 	color: #23b3b3;
 	font-size: 12px;
@@ -249,6 +263,12 @@ header .search input {
 
 .post-blurb {
 	color: #FFFFFF;
+	font-family: 'Antenna Regular';
+	font-size: 14px;
+}
+
+.post-blurb-overview {
+	color: #333333;
 	font-family: 'Antenna Regular';
 	font-size: 14px;
 }
