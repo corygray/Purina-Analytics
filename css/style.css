@@ -66,6 +66,13 @@ header .search {
 	padding-left: 20px;
 }
 
+.page-content .header-image {
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background: #0e1f43;
+}
+
 .content-bottom {
 	background: #0e1f43;
 	margin-top: 40px;

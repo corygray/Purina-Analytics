@@ -65,24 +65,15 @@
       <div class="inner">
         <center><a href="/blog"><img src="/library/images/insights-and-trends.png" /></a></center>
         <div class="blog-feed">
-          <div class="blog-post">
-            <span class="post-date">Date 1</span>
-            <h3 class="post-title">Blog Title 1</h3>
-            <p class="post-blurb">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <a class="read-more" href="#">Read More ></a>
-          </div><!-- blog-post -->
-          <div class="blog-post">
-            <span class="post-date">Date 2</span>
-            <h3 class="post-title">Blog Title 2</h3>
-            <p class="post-blurb">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <a class="read-more" href="#">Read More ></a>
-          </div><!-- blog-post -->
-          <div class="blog-post">
-            <span class="post-date">Date 3</span>
-            <h3 class="post-title">Blog Title 3</h3>
-            <p class="post-blurb">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <a class="read-more" href="#">Read More ></a>
-          </div><!-- blog-post -->
+          @foreach(var post in Umbraco.Content(1075).Children.OrderBy("CreateDate desc").Take(3))
+            {
+              <div class="blog-post">
+                <span class="post-date">@post.CreateDate.ToLongDateString()</span>
+                <a href="@post.Url"><h3 class="post-title">@post.Name</h3></a>    
+                <div class="post-blurb">@Umbraco.Truncate(post.postContent, 240, true)</div>
+                <a href="@post.Url" class="read-more">Read More ></a>
+              </div>
+            }
           <div class="clear"></div>
         </div><!-- blog-feed -->
       </div><!-- inner -->

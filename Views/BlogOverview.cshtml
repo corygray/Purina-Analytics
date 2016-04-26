@@ -4,8 +4,7 @@
 
 }
 
-
-@foreach(var post in CurrentPage.Children)
+@foreach(var post in CurrentPage.Children.OrderBy("CreateDate desc"))
 {
 	<div class="content equal blog-post-overview">
 		<div class="post-date">@post.CreateDate.ToLongDateString()</div>
