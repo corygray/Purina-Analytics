@@ -1,0 +1,28 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "Master.cshtml";
+
+}
+
+<style>
+.page-header {
+	display: none;
+}
+</style>
+
+<div class="page-header-blog">
+  <center>
+  <img src="~/library/images/headers/bar-graph.png"><br />
+  Events
+  </center>
+</div>
+
+<div class="content-wrapper">
+	<div class="post-date">@CurrentPage.eventDate</div>
+	<h3 class="event-title">@CurrentPage.eventTitle</h3>
+	<div class="post-blurb-overview">@CurrentPage.eventContent</div>
+</div>
+
+<script>
+  $( "body" ).addClass( "events" );
+</script>

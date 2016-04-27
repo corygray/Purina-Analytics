@@ -1,0 +1,11 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "Master.cshtml";
+}
+
+
+@CurrentPage.PageContent
+
+<script>
+$( "body" ).last().addClass( "home" );
+</script>

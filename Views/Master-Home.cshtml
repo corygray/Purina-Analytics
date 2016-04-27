@@ -1,0 +1,92 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = null;
+	var home = @CurrentPage.Site();
+}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <!-- Meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="@CurrentPage.siteDescription">
+
+    <title>@CurrentPage.Name | Analytics COE</title>
+	
+	<!-- Fonts -->
+	
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body class="home">
+    <header>
+      <div class="container">
+        <div class="inner">
+          <a href="/"><img src="/library/images/coe-logo.jpg" class="logo"/></a>
+          <h1 class="site-title">Analytics COE</h1>
+          <div class="search">
+            <input type="text" placeholder="Search"/>
+          </div><!-- search -->
+        </div><!-- inner -->
+      </div><!-- content -->
+    </header>
+	
+    <div class="content-top">
+		  <div class="inner">
+        <div class="navigation">
+          <ul>
+            <a href="/resources"><li class="resources"><span class="nav-text">Resources</span></li></a>
+            <a href="/trends"><li class="blog"><span class="nav-text">Trends</span></li></a>
+            <a href="/events"><li class="events"><span class="nav-text">Events</span></li></a>
+            <a href="/about"><li class="about"><span class="nav-text">About</span></li></a>
+            <a href="/contact-us"><li class="contact-us"><span class="nav-text">Contact Us</span></li></a>
+          </ul>
+        </div><!-- navigation -->
+        <div class="page-content">
+          @RenderBody()
+        </div><!-- page-content -->
+		  </div><!-- inner -->
+	  </div> <!-- content-top -->
+
+    <div class="clear"></div>
+
+    <div class="content-bottom">
+      <div class="inner">
+        <center><a href="/trends"><img src="/library/images/insights-and-trends.png" /></a></center>
+        <div class="blog-feed">
+          @foreach(var post in Umbraco.Content(1075).Children.OrderBy("CreateDate desc").Take(3))
+            {
+              <div class="blog-post">
+                <span class="post-date">@post.CreateDate.ToLongDateString()</span>
+                <a href="@post.Url"><h3 class="post-title">@post.Name</h3></a>    
+                <div class="post-blurb">@Umbraco.Truncate(post.postContent, 240, true)</div>
+                <a href="@post.Url" class="read-more">Read More ></a>
+              </div>
+            }
+          <div class="clear"></div>
+        </div><!-- blog-feed -->
+      </div><!-- inner -->
+    </div><!-- content-bottom -->
+
+    <footer>
+      <div class="container">
+        <div class="inner">
+        </div> <!-- inner --> 
+      </div> <!-- container -->
+    </footer>
+    
+    <!-- Javascripts -->
+    <script src="/js/jquery.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "Master.cshtml";
+
+}
+
+<style>
+.page-header {
+	display: none;
+}
+</style>
+
+<div class="page-header-blog">
+  <center>
+  <img src="~/library/images/headers/bar-graph.png"><br />
+  Events
+  </center>
+</div>
+
+<div class="content-wrapper">
+	@foreach(var post in Umbraco.Content(1096).Children.OrderBy("CreateDate desc"))
+	{
+		<div class="content equal blog-post-overview">
+			<div class="post-date">@post.eventDate</div>
+			<a href="@post.Url"><h3 class="event-title">@post.eventTitle</h3></a>
+			<p class="post-blurb-overview">@Umbraco.Truncate(post.eventContent, 240, true)</p>
+			<a class="orange-button" href="@post.Url">Sign Up Now ></a>
+		</div>
+	}
+</div>
+
+<script>
+  $( "body" ).addClass( "events" );
+</script>
+

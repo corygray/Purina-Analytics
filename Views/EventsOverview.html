@@ -1,0 +1,14 @@
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "Master.cshtml";
+
+}
+
+@foreach(var post in Umbraco.Content(1096).Children.OrderBy("CreateDate desc"))
+{
+	<div class="content equal blog-post-overview">
+		<div class="post-date">@post.eventDate</div>
+		<a href="@post.Url"><h3>@post.eventTitle</h3></a>
+		<p class="post-blurb-overview">@Umbraco.Truncate(post.eventContent, 240, true)</p>
+	</div>
+}

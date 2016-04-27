@@ -14,12 +14,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="@CurrentPage.siteDescription">
 
-    <title>@CurrentPage.Name | @CurrentPage._siteTitle</title>
+    <title>@CurrentPage.Name | Analytics COE</title>
 	
 	<!-- Fonts -->
 	
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -47,13 +48,19 @@
         <div class="navigation">
           <ul>
             <a href="/resources"><li class="resources"><span class="nav-text">Resources</span></li></a>
-            <a href="/blog"><li class="blog"><span class="nav-text">Blog</span></li></a>
+            <a href="/trends"><li class="blog"><span class="nav-text">Trends</span></li></a>
             <a href="/events"><li class="events"><span class="nav-text">Events</span></li></a>
             <a href="/about"><li class="about"><span class="nav-text">About</span></li></a>
             <a href="/contact-us"><li class="contact-us"><span class="nav-text">Contact Us</span></li></a>
           </ul>
         </div><!-- navigation -->
         <div class="page-content">
+        <div class="page-header">
+          <center>
+          <img src="~/library/images/headers/bar-graph.png"><br />
+          @CurrentPage.pageTitle
+          </center>
+        </div><!-- page-header -->
           @RenderBody()
         </div><!-- page-content -->
 		  </div><!-- inner -->
@@ -63,7 +70,7 @@
 
     <div class="content-bottom">
       <div class="inner">
-        <center><a href="/blog"><img src="/library/images/insights-and-trends.png" /></a></center>
+        <center><a href="/trends"><img src="/library/images/insights-and-trends.png" /></a></center>
         <div class="blog-feed">
           @foreach(var post in Umbraco.Content(1075).Children.OrderBy("CreateDate desc").Take(3))
             {
@@ -88,5 +95,9 @@
     
     <!-- Javascripts -->
     <script src="/js/jquery.min.js"></script>
+
+    <script>
+      $( "body" ).addClass( "@CurrentPage.pageTitle" );
+    </script>
   </body>
 </html>

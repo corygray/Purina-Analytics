@@ -3,6 +3,27 @@
     Layout = "Master.cshtml";
 }
 
-<h3 class="post-title post-page">@CurrentPage.postTitle</h3>
-<div class="post-date">@CurrentPage.CreateDate.ToLongDateString()</div>
-<p class="post-blurb-overview">@CurrentPage.postContent</p>
+<style>
+.page-header {
+	display: none;
+}
+</style>
+
+<div class="page-header-blog">
+  <center>
+  <img src="~/library/images/headers/bar-graph.png"><br />
+  Trends
+  </center>
+</div>
+
+<div class="content-wrapper">
+	<div class="post-date">@CurrentPage.CreateDate.ToLongDateString()</div>
+	<h3 class="post-title post">@CurrentPage.Name</h3>
+	<div class="by-line">BY @CurrentPage.Author</div>
+	<div class="post-image"><img src="@CurrentPage.postImage" /></div>
+	<p class="post-blurb-overview">@CurrentPage.postContent</p>
+</div>
+
+<script>
+  $( "body" ).addClass( "trends" );
+</script>

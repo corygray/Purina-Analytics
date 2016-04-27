@@ -4,12 +4,33 @@
 
 }
 
-@foreach(var post in CurrentPage.Children.OrderBy("CreateDate desc"))
-{
-	<div class="content equal blog-post-overview">
-		<div class="post-date">@post.CreateDate.ToLongDateString()</div>
-		<a href="@post.Url"><h3 class="post-title">@post.Name</h3></a>		
-		<p class="post-blurb-overview">@Umbraco.Truncate(post.postContent, 240, true)</p>
-		<a href="@post.Url" class="read-more">Read More ></a>
-	</div>
+<style>
+.page-header {
+	display: none;
 }
+</style>
+
+<div class="page-header-blog">
+  <center>
+  <img src="~/library/images/headers/bar-graph.png"><br />
+  Trends
+  </center>
+</div>
+
+<div class="content-wrapper">
+	@foreach(var post in CurrentPage.Children.OrderBy("CreateDate desc"))
+	{
+		<div class="content equal blog-post-overview">
+			<div class="post-date">@post.CreateDate.ToLongDateString()</div>
+			<a href="@post.Url"><h3 class="post-title">@post.Name</h3></a>
+			<div class="by-line">BY @post.Author</div>
+			<a href="@post.Url"><div class="post-image"><img src="@post.postImage" /></div></a>
+			<p class="post-blurb-overview">@Umbraco.Truncate(post.postContent, 240, true)</p>
+			<a href="@post.Url" class="read-more">Read More ></a>
+		</div>
+	}
+</div>
+
+<script>
+  $( "body" ).addClass( "trends" );
+</script>
