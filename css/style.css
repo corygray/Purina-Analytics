@@ -79,7 +79,7 @@ header .search {
 }
 
 .home .content-top .navigation {
-	width: 40%;
+	width: 27%;
 
 }
 
@@ -469,3 +469,108 @@ header .search input {
 }
 
 
+.a-resource {
+  background: #ee4e1c;
+  background-repeat: no-repeat;
+  background-position: top center;
+  width: 156px;
+  height: 156px;
+  margin: 0 0 23px 23px;
+  padding: 5px;
+  font-family: 'antenna-bold', sans-serif;
+  /* you'll need to change this to however you're calling the font */
+  text-align: center;
+  float: left;
+  position: relative;
+  overflow: hidden; }
+  .a-resource.strategy {
+    background-image: url(/library/images/icon-resources-strategy.png); }
+  .a-resource.research-studies {
+    background-image: url(/library/images/icon-resources-research.png); }
+  .a-resource.reps {
+    background-image: url(/library/images/icon-resources-reps.png); }
+  .a-resource.data-dictionary {
+    background-image: url(/library/images/icon-resources-data_dictionary.png); }
+  .a-resource.tagging-template {
+    background-image: url(/library/images/icon-resources-tagging.png); }
+  .a-resource.user-request {
+    background-image: url(/library/images/icon-resources-user_request.png); }
+    .a-resource.user-request h3 {
+      font-size: 16px;
+      line-height: 22px; }
+  .a-resource.url-generator {
+    background-image: url(/library/images/icon-resources-url_generator.png); }
+  .a-resource:hover .details {
+    top: 0;
+    opacity: 1;
+    -moz-opacity: 1;
+    filter: alpha(opacity=10 0); }
+  .a-resource a {
+    color: #fff;
+    text-decoration: none; }
+  .a-resource h3 {
+  	color: #FFFFFF;
+    margin: 0;
+    padding-top: 85px;
+    font-size: 20px;
+    line-height: 24px; }
+  .a-resource .details {
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 156px;
+    left: 0;
+    -webkit-transition: .3s;
+    transition: .3s;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    opacity: 0;
+    -moz-opacity: 0;
+    filter: alpha(opacity=0); }
+    .a-resource .details p {
+      color: #ef4326;
+      font-family: 'antenna-regular', sans-serif;
+      font-size: 14px;
+      line-height: 18px; }
+      .a-resource .details p span {
+        background: url(/library/images/arrow-right-resources.png) no-repeat 100% center;
+        padding-right: 10px; }
+
+/* BASE@2X */
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .a-resource.strategy {
+    background-image: url(/library/images/icon-resources-strategy@2x.png);
+    background-size: 156px 85px; }
+  .a-resource.research-studies {
+    background-image: url(/library/images/icon-resources-research@2x.png);
+    background-size: 156px 85px; }
+  .a-resource.reps {
+    background-image: url(/library/images/icon-resources-reps@2x.png);
+    background-size: 156px 85px; }
+  .a-resource.data-dictionary {
+    background-image: url(/library/images/icon-resources-data_dictionary@2x.png);
+    background-size: 156px 85px; }
+  .a-resource.tagging-template {
+    background-image: url(/library/images/icon-resources-tagging@2x.png);
+    background-size: 156px 85px; }
+  .a-resource.user-request {
+    background-image: url(/library/images/icon-resources-user_request@2x.png);
+    background-size: 156px 85px; }
+  .a-resource.url-generator {
+    background-image: url(/library/images/icon-resources-url_generator@2x.png);
+    background-size: 156px 85px; }
+  .a-resource .details p span {
+    background: url(/library/images/arrow-right-resources@2x.png) no-repeat 100% center;
+    background-size: 6px 9px; } }
+/* END BASE@2x */
